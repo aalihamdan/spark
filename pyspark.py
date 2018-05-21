@@ -40,8 +40,8 @@ def cekRentang(waktux,waktuy,status=None):
         return _cekRentang
 
 #rddA=rdd.map(cekTgl("15 mei"))
-#rddA=rdd.map(cekRentang("16 mei", "17 mei"))
-rddA=rdd.map(cekRentang("15 mei","17 mei","ancaman"))
+#rddA=rdd.map(cekRentang("16 mei", "17 mei")) #output: {"1":{ "status":"ancaman", "waktu":"16 mei 03:00" }, "2":{ "status":"aman", "waktu":"17 mei 12:00"}}
+rddA=rdd.map(cekRentang("15 mei","17 mei","ancaman")) #output:{"1":{"status":"ancaman","waktu":"16 mei 03:00"}}
 
 #simpan dalam file
 rddA.saveAsTextFile("hdfs://192.168.56.121:8020/hasil_dummy")
